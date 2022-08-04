@@ -44,4 +44,15 @@ class MobileBankApiTestV1 {
                 .body("[1].currency", equalTo("USD"));
 
     }
+
+    @Test
+    void shouldCurrencyNotRub() {
+        given()
+                .baseUri("http://localhost:9999/api/v1")
+                .when()
+                .get("/demo/accounts")
+                .then()
+                .body("[0].currency", equalTo("RUR"));
+
+    }
 }
