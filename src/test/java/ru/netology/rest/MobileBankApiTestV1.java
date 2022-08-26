@@ -47,17 +47,6 @@ class MobileBankApiTestV1 {
     }
 
     @Test
-    void shouldCurrencyNotRub() {
-        given()
-                .baseUri("http://localhost:9999/api/v1")
-                .when()
-                .get("/demo/accounts")
-                .then()
-                .body("[0].currency", equalTo("RUR"));
-
-    }
-
-    @Test
     void shouldCurrencyRubUsd() {
         given()
                 .baseUri("http://localhost:9999/api/v1")
@@ -71,4 +60,5 @@ class MobileBankApiTestV1 {
                 .body("[0].balance", greaterThanOrEqualTo(0));
 
     }
+
 }
